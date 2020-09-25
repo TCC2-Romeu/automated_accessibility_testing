@@ -1,5 +1,46 @@
 import os
 
+def cria_lista_tags(caminho_arquivo):
+    lista_aberto = []
+    lista_fechado = []
+    faz_parte_tag_abertura = False
+    arquivo = open(caminho_arquivo, 'r')
+    tag = ''
+
+    while True:
+        caractere = arquivo.read(1)
+        if not caractere:
+            break
+        if caractere == '<' or faz_parte_tag_abertura and not caractere.isspace():
+            faz_parte_tag_abertura = True
+            if faz_parte_tag_abertura and caractere != '<':
+                if caractere == '>':
+                    faz_parte_tag_abertura = False
+                else:
+                    tag += caractere
+            else:
+                if tag != '' and tag[0] != '/':
+                    lista_aberto.append(tag)
+                elif tag != ''  and tag[0] == '/':
+                    lista_fechado.append(tag)
+                tag = ''
+        else:
+            faz_parte_tag_abertura = False
+
+    return verfica_fechamento_tags(lista_aberto, lista_fechado)
+
+
+
+
+def verfica_fechamento_tags(lista_tags_abertas, lista_tags_fechada):
+    print(lista_tags_abertas)
+    print('\n')
+    print(lista_tags_fechada)
+    pilha = lista_tags_abertas
+
+
+    
+                
 
 def verifica_sentenciais_basicas(caminho_arquivo):
     lista_aberto = ["<"]
@@ -41,7 +82,7 @@ def abre_diretorios(caminho_diretorio):
 def main(caminho_diretorio):
     for arquivo in abre_diretorios(caminho_diretorio):
         print(arquivo)
-        print(verifica_sentenciais_basicas(caminho_diretorio+'/'+arquivo))
+        print(cria_lista_tags(caminho_diretorio+'/'+arquivo))
 
 
 caminho_diretorio = './arquivosteste'
