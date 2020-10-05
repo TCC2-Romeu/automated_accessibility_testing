@@ -1,6 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from blog.models import Post
+import accessibility_package
 import json
 
 class TestViews(TestCase):
@@ -10,8 +11,14 @@ class TestViews(TestCase):
         self.url = reverse('post_list')
 
 
-    def test_view_posts_get(self):
+    # def test_view_posts_get(self):
+    #     client = Client()
+    #     response = self.client.get(self.url)
+    #     print(response.content)
+        
+
+    def teste_importe_pacote(self):
         client = Client()
         response = self.client.get(self.url)
-        print(response.content)
-        
+        print("importou \n\n")
+        accessibility_package.teste_import(response.content)

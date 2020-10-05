@@ -1,5 +1,8 @@
 import os
 
+def teste(self):
+    print('deu certo')
+
 def cria_lista_tags(caminho_arquivo):
     lista_aberto = []
     lista_fechado = []
