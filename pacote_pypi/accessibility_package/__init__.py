@@ -1,1 +1,2 @@
-from .accessibility_functions import main
+from .accessibility_functions import check_accessibility
+from .classes import AcessibilityException

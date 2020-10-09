@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="accessibility_package_romeu_antunes", # Replace with your own username
-    version="0.0.7",
+    version="0.0.13",
     author="Romeu Carvalho Antunes",
     author_email="romeu.antunes@outlook.com",
     description="package with the intention of automating accessibility tests for django web development",
