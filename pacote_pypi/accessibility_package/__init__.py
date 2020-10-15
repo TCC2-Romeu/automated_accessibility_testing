@@ -1,2 +1,1 @@
-from .testes import teste_import
-# from .percorrerarquivo import teste
+from .accessibility_functions import main
