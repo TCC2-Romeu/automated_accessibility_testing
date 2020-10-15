@@ -1,12 +1,11 @@
 from bs4 import BeautifulSoup
-from classes import exception 
+from .classes import exception 
 
 exceptions = []
 
-def check_alt_att_on_img():
+def check_alt_att_on_img(html_recebido: str):
     empty_alt = [] 
-    arquivo = open('teste.html','r')
-    soup = BeautifulSoup(arquivo, 'html.parser')
+    soup = BeautifulSoup(html_recebido, 'html.parser')
     for tag in soup.find_all('img'):
         if(not tag.has_attr('alt')):
             exceptions.append(exception.AcessibilityException(tag,
@@ -16,12 +15,11 @@ def check_alt_att_on_img():
              'Empty alt description'))
 
 
-def check_hs_hierarchy():
+def check_hs_hierarchy(html_recebido: str):
     # todo verificar se é necessario fazer o stop case para o h6, existe h7?
     headings_tags = ['h1','h2','h3','h4','h5','h6']
     existing_tags = []
-    arquivo = open('teste.html','r')
-    soup = BeautifulSoup(arquivo, 'html.parser')
+    soup = BeautifulSoup(html_recebido, 'html.parser')
     for tag in soup.find_all(True):
         if tag.name in headings_tags:
             existing_tags.append(tag)
@@ -42,9 +40,9 @@ def print_errors():
         print('\n')
 
 
-def check_accessibility():
-    check_alt_att_on_img()
-    check_hs_hierarchy()
+def check_accessibility(html_recebido: str):
+    check_alt_att_on_img(html_recebido)
+    check_hs_hierarchy(html_recebido)
     print_errors()
 
 

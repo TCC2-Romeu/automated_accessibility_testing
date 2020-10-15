@@ -7,9 +7,13 @@ import json
 class TestViews(TestCase):
 
     def setUp(self):
+        # popular db
         self.client = Client()
         self.url = reverse('post_list')
 
+    def tearDown(self):
+        pass
+        #  apagar db
 
     # def test_view_posts_get(self):
     #     client = Client()
@@ -20,5 +24,4 @@ class TestViews(TestCase):
     def teste_importe_pacote(self):
         client = Client()
         response = self.client.get(self.url)
-        print("importou \n\n")
-        accessibility_package.teste_import(response.content)
+        accessibility_package.check_accessibility(response.content)
