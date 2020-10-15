@@ -17,6 +17,9 @@ def check_alt_att_on_img(html_recebido: str):
 
 def check_hs_hierarchy(html_recebido: str):
     # todo verificar se é necessario fazer o stop case para o h6, existe h7?
+    # Chamar a cada tag a funcao novamente verificando os filhos da tag
+    # testar pytydi dry run
+    # recursao
     headings_tags = ['h1','h2','h3','h4','h5','h6']
     existing_tags = []
     soup = BeautifulSoup(html_recebido, 'html.parser')
