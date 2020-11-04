@@ -29,3 +29,5 @@ class FunctionMapping:
 
     def set_enable(self, enable: bool):
         self.enable = enable
+
+    

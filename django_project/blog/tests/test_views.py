@@ -15,13 +15,11 @@ class TestViews(TestCase):
         pass
         #  apagar db
 
-    # def test_view_posts_get(self):
-    #     client = Client()
-    #     response = self.client.get(self.url)
-    #     print(response.content)
-        
 
     def teste_importe_pacote(self):
         client = Client()
         response = self.client.get(self.url)
-        accessibility_package.check_accessibility(response.content)
+        #response.content -- > byte string
+        # VErificar se é possivel retornar linha coluna do erro
+        list =  ['fc_alt']
+        self.assertTrue(accessibility_package.check_accessibility(response.content.decode('utf8'), None))  

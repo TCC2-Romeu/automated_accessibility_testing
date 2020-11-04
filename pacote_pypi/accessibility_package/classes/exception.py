@@ -1,18 +1,19 @@
 
 class AcessibilityException:
      
-    def __init__(self, tag_error: str, type_error: str):
-        self.tag_error = tag_error
-        self.type_error = type_error
-      
-    def display_tag_error(self):
-        print(self.tag_error)
+    # numero de linha
+    # trocar a nomenclatura fragmento do html onde apareceu o erro
+    # error message
+    def __init__(self, code_fragment_error: str, error_message: str):
+        self.code_fragment_error = code_fragment_error
+        self.error_message = error_message
 
-    def display_type_error(self):
-        print(self.type_error)
+    def __str__(self):
+        # retornar uma string
+        # caso eu de print no error printar o erro e a mensagem
+        pass
     
-    def set_type_error(self, type_error: str):
-        self.type_error = type_error
 
-    def set_tag_error(self, tag_error: str):
-        self.tag_error = tag_error
+ 
+    
+    # retirar os metodos, o python não precisa de get/set 
