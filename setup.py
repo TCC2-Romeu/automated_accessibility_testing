@@ -19,5 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.7",
-    # requires=["beautifulsoup4 ~= 4.9", "py-w3c ~= 0.3", "joblib"],
+    install_requires=["beautifulsoup4 ~= 4.9", "py-w3c ~= 0.3"],
 )
