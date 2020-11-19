@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="accessibility_package_romeu_antunes",  # Replace with your own username
+    name="automated_accessibility_testing",  # Replace with your own username
     version="0.0.15",
     author="Romeu Carvalho Antunes",
     author_email="romeu.antunes@outlook.com",
@@ -19,5 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.7",
-    requires=["beautifulsoup4 ~= 4.9", "py-w3c ~= 0.3", "joblib"],
+    # requires=["beautifulsoup4 ~= 4.9", "py-w3c ~= 0.3", "joblib"],
 )

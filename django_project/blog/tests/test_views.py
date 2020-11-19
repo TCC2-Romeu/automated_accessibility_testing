@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from blog.models import Post
-import accessibility_package
+import automated_accessibility_testing
 import json
 
 # Criar uma classe accessibility class case
@@ -30,7 +30,7 @@ class TestViews(TestCase):
         # VErificar se é possivel retornar linha coluna do erro
         list = []
         self.assertFalse(
-            accessibility_package.check_accessibility(
+            automated_accessibility_testing.check_accessibility(
                 response.content.decode("utf8"), list
             )
         )
