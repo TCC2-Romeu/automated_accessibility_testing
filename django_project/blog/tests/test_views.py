@@ -4,22 +4,33 @@ from blog.models import Post
 import accessibility_package
 import json
 
-class TestViews(TestCase):
+# Criar uma classe accessibility class case
+# onde já faça o bioler plate
+# SUbclasse do testcase
+# O cliente que importar assertAcessibleURL, assertHTML recebe o html bruto
+# url como argumento do metodo
+# Popular o readme do pacote
+# Distribuir o pacote
 
+
+class TestViews(TestCase):
     def setUp(self):
         # popular db
         self.client = Client()
-        self.url = reverse('post_list')
+        self.url = reverse("post_list")
 
     def tearDown(self):
         pass
         #  apagar db
 
-
     def teste_importe_pacote(self):
         client = Client()
         response = self.client.get(self.url)
-        #response.content -- > byte string
+        # response.content -- > byte string
         # VErificar se é possivel retornar linha coluna do erro
-        list =  ['fc_alt']
-        self.assertTrue(accessibility_package.check_accessibility(response.content.decode('utf8'), None))  
+        list = []
+        self.assertFalse(
+            accessibility_package.check_accessibility(
+                response.content.decode("utf8"), list
+            )
+        )

@@ -1,2 +1,2 @@
 from .accessibility_functions import check_accessibility
-from .classes import AcessibilityException, FunctionMapping
+from .classes import AcessibilityException

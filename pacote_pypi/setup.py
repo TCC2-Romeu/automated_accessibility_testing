@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="accessibility_package_romeu_antunes", # Replace with your own username
+    name="accessibility_package_romeu_antunes",  # Replace with your own username
     version="0.0.15",
     author="Romeu Carvalho Antunes",
     author_email="romeu.antunes@outlook.com",
@@ -18,5 +18,6 @@ setuptools.setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.7',
+    python_requires=">=3.7",
+    requires=["beautifulsoup4 ~= 4.9", "py-w3c ~= 0.3", "joblib"],
 )
