@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python django_project/manage.py test blog
+python testing/django_project/manage.py test blog
