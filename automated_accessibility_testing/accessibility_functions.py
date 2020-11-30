@@ -116,9 +116,9 @@ def validade_html(html_recebido: str):
 def map_functions():
     validade_html_cached = memory.cache(validade_html)
     functions = {
-        # "alt_att_check" : check_alt_att_on_img,
-        # "contains_h1" : check_for_h1,
-        # "headers_tag_hierarchy": check_hs_hierarchy,
+        "alt_att_check": check_alt_att_on_img,
+        "contains_h1": check_for_h1,
+        "headers_tag_hierarchy": check_hs_hierarchy,
         "static_validation_html": validade_html_cached,
     }
     return functions
