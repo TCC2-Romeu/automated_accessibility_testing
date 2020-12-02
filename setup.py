@@ -20,5 +20,5 @@ setuptools.setup(
     ],
     python_requires=">=3.7",
     install_requires=["beautifulsoup4 ~= 4.9", "py-w3c ~= 0.3", "joblib ~= 0.17"],
-    extras_require = {"django" : ["django ~= 2.2"]},
+    extras_require={"django": ["django ~= 2.2"]},
 )

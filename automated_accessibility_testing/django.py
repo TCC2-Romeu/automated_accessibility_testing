@@ -4,8 +4,10 @@ from blog.models import Post
 import automated_accessibility_testing
 import json
 
+__all__ = ["AcessibilityTest"]
 
-class DjangoAcessibilityTest(TestCase):
+
+class AcessibilityTest(TestCase):
     def setUp(self):
         self.client = Client()
 

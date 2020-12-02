@@ -1,3 +1,6 @@
+__all__ = ["AcessibilityException"]
+
+
 class AcessibilityException:
     def __init__(
         self,

@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
-from .classes import exception
 from py_w3c.validators.html.validator import HTMLValidator
 from joblib import Memory
+from . import exceptions
 import time
 
 # Devo retirar essa variaveis globais?
@@ -15,7 +15,7 @@ def check_alt_att_on_img(html_recebido: str):
     for tag in soup.find_all("img"):
         if not tag.has_attr("alt"):
             exceptions_list.append(
-                exception.AcessibilityException(
+                exceptions.AcessibilityException(
                     "AcessibilityException",
                     tag,
                     "Missing alt atribute on tag image",
@@ -25,7 +25,7 @@ def check_alt_att_on_img(html_recebido: str):
             )
         elif tag["alt"] == "":
             exceptions_list.append(
-                exception.AcessibilityException(
+                exceptions.AcessibilityException(
                     "AcessibilityException",
                     tag,
                     "Empty alt description",
@@ -42,7 +42,7 @@ def check_for_h1(html_recebido: str):
     tag = soup.find("h1")
     if tag == None:
         exceptions_list.append(
-            exception.AcessibilityException(
+            exceptions.AcessibilityException(
                 "AcessibilityException", "", "Missing header tag H1 on document", "", ""
             )
         )
@@ -75,7 +75,7 @@ def check_hs_hierarchy(html_recebido: str):
             if value != name:
                 if head_tags[value] == False:
                     exceptions_list.append(
-                        exception.AcessibilityException(
+                        exceptions.AcessibilityException(
                             "AcessibilityException",
                             code_fragment,
                             "Suspected hierarchical order, consider reviewing it, Tag {} appeared first even without the existence of the {} tag".format(
@@ -102,7 +102,7 @@ def validade_html(html_recebido: str):
 
     for error in vld.errors:
         exceptions_list.append(
-            exception.AcessibilityException(
+            exceptions.AcessibilityException(
                 "StaticHTMLValidation",
                 error["extract"].replace("\n", ""),
                 error["message"],
