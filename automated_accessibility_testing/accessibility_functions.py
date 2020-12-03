@@ -92,10 +92,6 @@ def check_hs_hierarchy(html_recebido: str):
 
 
 def validade_html(html_recebido: str):
-    # retornar do joblib a lista de erros a partir da string
-    # evitar requisições para o site da w3c a toa
-    # salvar em cache para evitar requisições duplicadas (joblib - cria objetos chamados memory)
-    #  criar cache local no disco
     vld = HTMLValidator()
     vld.validate_fragment(str(html_recebido))
     exceptions_list = []
