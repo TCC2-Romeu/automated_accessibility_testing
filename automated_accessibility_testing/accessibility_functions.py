@@ -4,7 +4,6 @@ from joblib import Memory
 from . import exceptions
 import time
 
-# Devo retirar essa variaveis globais?
 location = "./cachedir"
 memory = Memory(location, verbose=0)
 

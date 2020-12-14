@@ -4,11 +4,12 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="automated_accessibility_testing",  # Replace with your own username
-    version="0.0.15",
+    name="automated_accessibility_testing",
+    version="1.0.0",
     author="Romeu Carvalho Antunes",
     author_email="romeu.antunes@outlook.com",
-    description="package with the intention of automating accessibility tests for django web development",
+    description="package with the intention of automating accessibility"
+    + " tests for web development",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/TCC2-Romeu/Pacote-Pip",
