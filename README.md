@@ -23,16 +23,15 @@ The package dependencies that will be installed automatically are:
 
 # Installation
 
-para instalar e utilizar o pacote existem duas maneiras, sendo a primeira a instalacao diretamente do repositorio pip atraves do comando:
--
-A segunda forma de instalacao seria a partir deste respositorio necessitando realizar o clone e instalar de forma local a partir deste comando:
--
+There are two ways to install and use the package, the first being installing directly from the pip repository using the command: pip install -i https://test.pypi.org/simple/ automated-accessibility-testing==1.0.0
+
+The second form of installation would be from this repository needing to perform the clone and install locally from this command: git clone https://github.com/TCC2-Romeu/automated_accessibility_testing.git
 
 # Use
 
-Para utilizar o pacote voce podera chamar a funcao check_aces e passar o html como string, desta forma o pacote ira realizar todos os testes do pacote no quesito de acessibilidade alem de uma validacao estatica do html segundo a w3c, caso o usuario nao deseje rodar algumas das funcoes ele podera passar uma lista para o metodo check onde as funções listadas serao ignoradas.
-Ao final o usuario recebera uma lista de objetos com os erros apontados
+To use the package you can call the check_accessibility function and pass the html as a string, this way the package will perform all tests of the package in terms of accessibility in addition to a static validation of the html according to w3c, in case the user does not want to run some of the functions it can pass a list to the check_accessibility method where the listed functions will be ignored.
+At the end the user will receive a list of objects with the errors pointed out
 
 # License
 
-A licenca utilizada no projeto foi a : 
+The project license is: GPL3
